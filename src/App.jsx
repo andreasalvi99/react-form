@@ -45,8 +45,8 @@ export default function App() {
         id="article-list"
         className="p-5 d-flex justify-content-center align-items-center flex-column"
       >
-        <div className="container text-start p-3 bg-primary-subtle">
-          <ul className="list-group list-group-flush">
+        <div className="container text-start p-3 bg-primary-subtle rounded-3">
+          <ul className="list-group list-group-flush rounded-3">
             {headLines.map((headLine, index) => {
               return (
                 <li key={index} className="list-group-item fw-bold p-3">
