@@ -1,14 +1,25 @@
-const headLines = [
-  "Come organizzare la tua giornata in modo efficace",
-  "5 strumenti digitali indispensabili per lavorare meglio",
-  "Guida base al minimalismo digitale",
-  "Come migliorare la concentrazione in ambienti rumorosi",
-  "Introduzione al lavoro da remoto",
-  "Perché le pause migliorano la produttività",
-  "Le basi della sicurezza online",
+import { useState } from "react";
+
+const startHeadLines = [
+  `"Come organizzare la tua giornata in modo efficace"`,
+  `
+"5 strumenti digitali indispensabili per lavorare meglio"`,
+  `
+"Guida base al minimalismo digitale"`,
+  `
+"Come migliorare la concentrazione in ambienti rumorosi"`,
+  `
+"Introduzione al lavoro da remoto"`,
+  `
+"Perché le pause migliorano la produttività"`,
+  `
+"Le basi della sicurezza online"`,
+  ,
 ];
 
 export default function App() {
+  const [headLines, setArticle] = useState(startHeadLines);
+  const [newArticle, setNewArticle] = useState("");
   return (
     <>
       <section
@@ -26,22 +37,32 @@ export default function App() {
             })}
           </ul>
         </div>
-        <div className="input-group mb-3 container mt-3">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            setArticle([...headLines, newArticle]);
+          }}
+          className="input-group mb-3 container mt-3 "
+        >
           <input
+            value={newArticle}
             type="text"
+            onChange={(e) => {
+              setNewArticle(e.target.value);
+            }}
             className="form-control"
             placeholder="New Article"
             aria-label="New Article"
-            aria-describedby="button-addon2"
+            aria-describedby="button-new-article"
           />
           <button
             className="btn btn-outline-primary"
             type="button"
-            id="button-addon2"
+            id="button-new-article"
           >
             + Aggiungi
           </button>
-        </div>
+        </form>
       </section>
     </>
   );
