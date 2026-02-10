@@ -11,8 +11,18 @@ const headLines = [
 export default function App() {
   return (
     <>
-      <section>
-        <div className="container text-center"></div>
+      <section className="p-5">
+        <div className="container text-start p-3">
+          <ul class="list-group list-group-flush">
+            {headLines.map((headLine, index) => {
+              return (
+                <li key={index} class="list-group-item">
+                  {headLine}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </section>
     </>
   );
