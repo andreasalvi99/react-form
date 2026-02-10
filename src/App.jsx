@@ -24,11 +24,13 @@ export default function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (newArticle === "") return;
     setArticle([...headLines, newArticle]);
     setNewArticle("");
   }
 
   function handleSend() {
+    if (newArticle === "") return;
     setArticle([...headLines, newArticle]);
     setNewArticle("");
   }
