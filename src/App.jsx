@@ -13,18 +13,34 @@ export default function App() {
     <>
       <section
         id="article-list"
-        className="p-5 d-flex justify-content-center align-items-center"
+        className="p-5 d-flex justify-content-center align-items-center flex-column"
       >
         <div className="container text-start p-3 bg-primary-subtle">
-          <ul class="list-group list-group-flush">
+          <ul className="list-group list-group-flush">
             {headLines.map((headLine, index) => {
               return (
-                <li key={index} class="list-group-item fw-bold p-3">
+                <li key={index} className="list-group-item fw-bold p-3">
                   {headLine}
                 </li>
               );
             })}
           </ul>
+        </div>
+        <div className="input-group mb-3 container mt-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="New Article"
+            aria-label="New Article"
+            aria-describedby="button-addon2"
+          />
+          <button
+            className="btn btn-outline-primary"
+            type="button"
+            id="button-addon2"
+          >
+            + Aggiungi
+          </button>
         </div>
       </section>
     </>
