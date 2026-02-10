@@ -63,7 +63,7 @@ export default function App() {
                 >
                   {headLine}
                   <button
-                    className="rounded-2 border-2 bg-danger border border-transparent"
+                    className="rounded-2 bg-danger border border-transparent"
                     onClick={() => deleteHeadLine(index)}
                   >
                     <i className="bi bi-trash-fill text-light">
