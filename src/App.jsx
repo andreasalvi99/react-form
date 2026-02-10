@@ -39,6 +39,13 @@ export default function App() {
     setNewArticle(e.target.value);
   }
 
+  function deleteHeadLine(indexDeleted) {
+    const updatedHeadlines = headLines.filter((_, index) => {
+      return index !== indexDeleted;
+    });
+    setArticle(updatedHeadlines);
+  }
+
   return (
     <>
       <section
@@ -55,23 +62,8 @@ export default function App() {
                   className="list-group-item fw-bold p-3 d-flex justify-content-between"
                 >
                   {headLine}
-                  <button>
-                    <i
-                      className="bi bi-trash-fill"
-                      onClick={() => {
-                        console.log("index:", index);
-
-                        const updatedHeadlines = headLines.filter(
-                          (_, newIndex) => {
-                            console.log("newIndex:", newIndex);
-
-                            return newIndex !== index;
-                          },
-                        );
-                        console.log(updatedHeadlines);
-                        setArticle(updatedHeadlines);
-                      }}
-                    ></i>
+                  <button onClick={() => deleteHeadLine(index)}>
+                    <i className="bi bi-trash-fill"></i>
                   </button>
                 </li>
               );
