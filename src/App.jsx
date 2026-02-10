@@ -17,7 +17,7 @@ const startHeadLines = [
 ];
 
 export default function App() {
-  const [headLines, setArticle] = useState(startHeadLines);
+  const [headLines, setHeadLines] = useState(startHeadLines);
   const [newArticle, setNewArticle] = useState("");
 
   // ** FUNZIONI
@@ -25,13 +25,13 @@ export default function App() {
   function handleSubmit(e) {
     e.preventDefault();
     if (newArticle === "") return;
-    setArticle([...headLines, newArticle]);
+    setHeadLines([...headLines, newArticle]);
     setNewArticle("");
   }
 
   function handleSend() {
     if (newArticle === "") return;
-    setArticle([...headLines, newArticle]);
+    setHeadLines([...headLines, newArticle]);
     setNewArticle("");
   }
 
@@ -43,7 +43,7 @@ export default function App() {
     const updatedHeadlines = headLines.filter((_, index) => {
       return index !== indexDeleted;
     });
-    setArticle(updatedHeadlines);
+    setHeadLines(updatedHeadlines);
   }
 
   return (
