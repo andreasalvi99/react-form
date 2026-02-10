@@ -66,7 +66,9 @@ export default function App() {
                     className="rounded-2 border-2 bg-danger border border-transparent"
                     onClick={() => deleteHeadLine(index)}
                   >
-                    <i className="bi bi-trash-fill text-light"></i>
+                    <i className="bi bi-trash-fill text-light">
+                      <p className="d-inline">Delete</p>
+                    </i>
                   </button>
                 </li>
               );
