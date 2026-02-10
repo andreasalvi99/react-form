@@ -86,12 +86,7 @@ export default function App() {
             aria-label="New Article"
             aria-describedby="button-new-article"
           />
-          <button
-            onClick={handleSend}
-            className="btn btn-outline-primary"
-            type="button"
-            id="button-new-article"
-          >
+          <button onClick={handleSend} className="btn btn-outline-primary">
             + Aggiungi
           </button>
         </form>
