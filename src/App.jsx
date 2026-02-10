@@ -62,8 +62,11 @@ export default function App() {
                   className="list-group-item fw-bold p-3 d-flex justify-content-between"
                 >
                   {headLine}
-                  <button onClick={() => deleteHeadLine(index)}>
-                    <i className="bi bi-trash-fill"></i>
+                  <button
+                    className="rounded-2 border-2 bg-danger border border-transparent"
+                    onClick={() => deleteHeadLine(index)}
+                  >
+                    <i className="bi bi-trash-fill text-light"></i>
                   </button>
                 </li>
               );
