@@ -14,12 +14,29 @@ const startHeadLines = [
 "Perché le pause migliorano la produttività"`,
   `
 "Le basi della sicurezza online"`,
-  ,
 ];
 
 export default function App() {
   const [headLines, setArticle] = useState(startHeadLines);
   const [newArticle, setNewArticle] = useState("");
+
+  // ** FUNZIONI
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setArticle([...headLines, newArticle]);
+    setNewArticle("");
+  }
+
+  function handleSend() {
+    setArticle([...headLines, newArticle]);
+    setNewArticle("");
+  }
+
+  function handleChanges(e) {
+    setNewArticle(e.target.value);
+  }
+
   return (
     <>
       <section
@@ -38,24 +55,20 @@ export default function App() {
           </ul>
         </div>
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setArticle([...headLines, newArticle]);
-          }}
+          onSubmit={handleSubmit}
           className="input-group mb-3 container mt-3 "
         >
           <input
             value={newArticle}
             type="text"
-            onChange={(e) => {
-              setNewArticle(e.target.value);
-            }}
+            onChange={handleChanges}
             className="form-control"
             placeholder="New Article"
             aria-label="New Article"
             aria-describedby="button-new-article"
           />
           <button
+            onClick={handleSend}
             className="btn btn-outline-primary"
             type="button"
             id="button-new-article"
